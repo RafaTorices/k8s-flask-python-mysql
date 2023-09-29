@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-script
+data:
+  init.sql: |
+    USE contador;
+    CREATE TABLE visitas(
+      id INT NOT NULL AUTO_INCREMENT,
+      contador INT NOT NULL,
+      PRIMARY KEY (id)
+    );

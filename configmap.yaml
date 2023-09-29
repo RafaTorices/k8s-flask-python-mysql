@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-configmap
+data:
+  MYSQL_HOST: mysql-service
+  MYSQL_PORT: "3306"
+  MYSQL_DATABASE: "contador"
+  MYSQL_USER: "contador"
+  MYSQL_PASSWORD: "123456"

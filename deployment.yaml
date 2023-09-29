@@ -1,0 +1,23 @@
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app-container
+          image: rafacv99/test_keepcoding:2.0
+          envFrom:
+            - configMapRef:
+                name: mysql-configmap
